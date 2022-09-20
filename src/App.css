@@ -7,10 +7,10 @@
   text-align: center;
   border-bottom: 1px solid lightgray;
 }
-ul {
+.aa ul {
   display: inline-block;
 }
-li {
+.aa ul li {
   width: 200px;
   cursor: pointer;
   list-style: none;
@@ -24,4 +24,12 @@ li:hover {
   color: purple;
   text-decoration-line: underline;
   text-decoration-color: purple;
+}
+
+.sectionTitle {
+  margin-top: 100px;
+  margin-bottom: 50px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
 }

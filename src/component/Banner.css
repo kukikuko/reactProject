@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-input {
+.searchBox form input {
     width: 50%;
     border: 1px solid rgba(110, 12, 110, 0.795);
     border-radius: 5px;
@@ -11,11 +11,11 @@ input {
     text-align: center;
 }
 
-form {
+.searchBox form {
     position: relative;
     text-align: center;
 }
 
-input:focus {
+.searchBox form input:focus {
     outline: none;
 }

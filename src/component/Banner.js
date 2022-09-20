@@ -7,7 +7,7 @@ function Banner({inputValue, setInputValue}) {
     let navigate = useNavigate();
 
     return(
-        <div>
+        <div className="banner">
             <p style={{textAlign: "cneter"}}>
                 <img src={logo} alt="kurlyLogo" style={{margin : "20px auto", display: "block"}} 
                     onClick={() => {navigate("/");}}/>
