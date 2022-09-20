@@ -1,6 +1,27 @@
-.App {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
+.aa {
+  text-align: center;
+  border-bottom: 1px solid lightgray;
+}
+ul {
+  display: inline-block;
+}
+li {
+  width: 200px;
+  cursor: pointer;
+  list-style: none;
+  float: left;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 20px;
+}
+li:hover {
+  color: purple;
+  text-decoration-line: underline;
+  text-decoration-color: purple;
+}
