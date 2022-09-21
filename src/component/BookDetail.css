@@ -1,0 +1,17 @@
+.detailArticle {
+    width: 1050px;
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.detailImg {
+    margin-left: 120px;
+    width: 400px;
+    height: 552px;
+    display: block;
+}
+
+.detailMain {
+    width: 450px;
+}
