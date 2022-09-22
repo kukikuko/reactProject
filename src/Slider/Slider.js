@@ -40,9 +40,9 @@ export default function Slider({params}) {
         slidesPerGroup={4}
         loop={true}
         loopFillGroupWithBlank={true}
-        pagination={{
-          clickable: true,
-        }}
+        // pagination={{
+        //   clickable: true,
+        // }}
         navigation={true}
         modules={[Pagination, Navigation]}
         className="mySwiper"
@@ -53,7 +53,8 @@ export default function Slider({params}) {
           let sale = Math.floor(((priceStandard - priceSales) / priceStandard) * 100);
 
           return (
-          <SwiperSlide>
+          <SwiperSlide 
+            style={{cursor: "pointer"}}>
             <img
               src={item.cover}></img>
             <div style={{marginTop : "20px", fontWeight : "400"}}>{item.title}</div>

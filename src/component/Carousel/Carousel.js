@@ -1,19 +1,18 @@
 import Carousel from "react-bootstrap/Carousel";
-import food1 from "../images/food1.jpg";
 
 function MainCarousel() {
   return (
-    <div>
+    <div style={{marginBottom : "100px"}}>
       <Carousel>
         <Carousel.Item>
-          <img className="d-block w-100" src={food1} alt="First slide" style={{ height: "370px" }} />
+          <img className="d-block w-100" src={`${process.env.PUBLIC_URL}/food1.jpg`} alt="First slide" style={{ height: "370px" }} />
           <Carousel.Caption>
             <h3>First slide label</h3>
             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img className="d-block w-100" src={food1} alt="Second slide" style={{ height: "370px" }} />
+          <img className="d-block w-100" src={`${process.env.PUBLIC_URL}/food1.jpg`} alt="Second slide" style={{ height: "370px" }} />
 
           <Carousel.Caption>
             <h3>Second slide label</h3>
@@ -21,7 +20,7 @@ function MainCarousel() {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img className="d-block w-100" src={food1} alt="Third slide" style={{ height: "370px" }} />
+          <img className="d-block w-100" src={`${process.env.PUBLIC_URL}/food1.jpg`} alt="Third slide" style={{ height: "370px" }} />
 
           <Carousel.Caption>
             <h3>Third slide label</h3>

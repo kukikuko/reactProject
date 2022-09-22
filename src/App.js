@@ -2,11 +2,10 @@ import './App.css';
 import { Row, Container } from "react-bootstrap";
 import { Routes, Route, useNavigate, } from "react-router-dom";
 import { useEffect, useState } from 'react';
-import Banner from './component/Banner.js';
-import MainCarousel from './component/Carousel';
-import BookCard from './component/BookCard.js';
-import BookDetial from './component/BookDetail.js';
-import Nav from './component/Nav.js';
+import Banner from './component/Banner/Banner.js';
+import BookCard from './component/BookCard/BookCard.js';
+import BookDetial from './component/BookDetail/BookDetail.js';
+import Nav from './component/Nav/Nav.js';
 import axios from 'axios';
 import Main from './Main.js';
 import Bottom from './bottom/Bottom';
@@ -23,7 +22,6 @@ function App() {
       "/ttb/api/ItemList.aspx?ttbkey=ttbgurwn8051154001&QueryType=Bestseller&MaxResults=50&start=1&SearchTarget=" + c + "&Cover=Big&output=js&Version=20131101";
     axios.get(url)
       .then((value)=>{
-        console.log(value.data);
         let temp = [...books];
         for (let i = 0; i < value.data.item.length; i++ ) {
           temp.push(value.data.item[i]);
@@ -31,9 +29,7 @@ function App() {
         setBooks(temp);
       })
     }
-    
   }, [])
-  console.log(books);
 
   return (
     <div className="App">
@@ -50,22 +46,21 @@ function App() {
 
       <Routes>
         <Route path='/' element={
-          <div>
-            <MainCarousel />
-            <div className='sectionTitle'><span>이 상품 어때요?</span></div>
-            <Container style={{width: "1060px"}}>
-              <Row sm={1} md={4}>
-                {books.map((data, i) => {
-                  return <BookCard key={data.isbn} books={books} book={data} i={i} />;
-                })}
-              </Row>
-            </Container>
-          </div>
+          <Main />
+          // <div>
+          //   <div className='sectionTitle'><span>이 상품 어때요?</span></div>
+          //   <Container style={{width: "1060px"}}>
+          //     <Row sm={1} md={4}>
+          //       {books.map((data, i) => {
+          //         return <BookCard key={data.isbn} books={books} book={data} i={i} />;
+          //       })}
+          //     </Row>
+          //   </Container>
+          // </div>
         }>
         </Route>
         <Route path="/goods/:id" element={<BookDetial books={books}/>} />
       </Routes>
-      <Main />
       <Bottom />
     </div>
 

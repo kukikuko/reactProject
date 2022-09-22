@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import logo from '../images/logo.png';
 import './Banner.css';
 import { FaSearch } from "react-icons/fa";
 
@@ -9,7 +8,7 @@ function Banner({inputValue, setInputValue}) {
     return(
         <div className="banner">
             <p style={{textAlign: "cneter"}}>
-                <img src={logo} alt="kurlyLogo" style={{margin : "20px auto", display: "block"}} 
+                <img src={`${process.env.PUBLIC_URL}/logo.png`} alt="kurlyLogo" style={{margin : "20px auto", display: "block"}} 
                     onClick={() => {navigate("/");}}/>
             </p>
             <div className="searchBox">
