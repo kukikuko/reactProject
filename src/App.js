@@ -30,6 +30,8 @@ function App() {
       })
     }
   }, [])
+  
+  console.log(books);
 
   return (
     <div className="App">
