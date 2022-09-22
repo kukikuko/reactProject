@@ -21,7 +21,7 @@ export default function Slider({params}) {
           `/ttb/api/ItemList.aspx?ttbkey=ttbgurwn8051154001&QueryType=Bestseller&MaxResults=100&start=1&SearchTarget=${params}&Cover=Big&output=js&Version=20131101`
         );
         console.log("Response DATA : ", response.data.item.slice(0, 10));
-        setGetData(response.data.item.slice(0, 12)); //10개만 보이도록!
+        setGetData(response.data.item.slice(0, 12)); //12개만 보이도록!
       } catch (error) {
         //응답 실패
         console.log("Carousel Error : ", error);

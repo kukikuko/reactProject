@@ -9,6 +9,7 @@ import BookDetial from './component/BookDetail.js';
 import Nav from './component/Nav.js';
 import axios from 'axios';
 import Main from './Main.js';
+import Bottom from './bottom/Bottom';
 
 function App() {
   let [inputValue, setInputValue] = useState("");
@@ -65,6 +66,7 @@ function App() {
         <Route path="/goods/:id" element={<BookDetial books={books}/>} />
       </Routes>
       <Main />
+      <Bottom />
     </div>
 
   );

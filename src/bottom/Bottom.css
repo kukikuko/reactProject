@@ -1,0 +1,84 @@
+.bottomMain {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid lightgray;
+    margin-top: 20px;
+    padding-top: 35px;
+    margin-bottom: 50px;
+}
+.bm1Span {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.bm1 strong {
+    font-size: 30px;
+}
+
+.bm1 button {
+    padding: 10px 20px;
+    background-color: white;
+    border: 1px solid rgb(196, 194, 194);
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.bm1gray {
+    color: rgb(88, 88, 88);
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+.bm1str {
+    margin: 20px 0;
+}
+
+.bm2span {
+    font-weight: 600;
+}
+
+.bm2div {
+    color: rgb(88, 88, 88);
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+.bm2div span {
+    color: rgb(77, 1, 77);
+    font-weight: bold;
+}
+
+.bm1 {
+    margin-left: 100px;
+}
+.bm2 {
+    margin-right: 100px;
+}
+
+.bottombt {
+    background-color: rgb(247, 247, 247);
+    color: gray;
+    text-align: center;
+    font-size: 12px;
+    padding: 30px 0 30px 0;
+    margin: 50px 0 20px 0;
+}
+
+.bottomBtn {
+    padding-top: 30px;
+    border-top: 1px solid lightgray;
+    width: 1000px;
+    margin-left: 120px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bottomBtn button {
+    border : none;
+    background-color: white;
+}
+
+.bottomBtn button div {
+    font-size: 12px;
+    color: gray;
+}
