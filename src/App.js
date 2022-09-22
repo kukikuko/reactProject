@@ -8,6 +8,7 @@ import BookCard from './component/BookCard.js';
 import BookDetial from './component/BookDetail.js';
 import Nav from './component/Nav.js';
 import axios from 'axios';
+import Main from './Main.js';
 
 function App() {
   let [inputValue, setInputValue] = useState("");
@@ -18,7 +19,7 @@ function App() {
     let cat = ["Book", "Foreign", "Music"]
     for( let c of cat) {
     const url =
-      "/ttb/api/ItemList.aspx?ttbkey=ttbgurwn8051154001&QueryType=Bestseller&MaxResults=100&start=1&SearchTarget=" + c + "&Cover=Big&output=js&Version=20131101";
+      "/ttb/api/ItemList.aspx?ttbkey=ttbgurwn8051154001&QueryType=Bestseller&MaxResults=50&start=1&SearchTarget=" + c + "&Cover=Big&output=js&Version=20131101";
     axios.get(url)
       .then((value)=>{
         console.log(value.data);
@@ -63,7 +64,7 @@ function App() {
         </Route>
         <Route path="/goods/:id" element={<BookDetial books={books}/>} />
       </Routes>
-      
+      <Main />
     </div>
 
   );
