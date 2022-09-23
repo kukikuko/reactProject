@@ -1,10 +1,10 @@
 .Category {
-    margin: 50px 0;
+    width: 1050px;
+    margin: 50px auto;
 }
 
 .list {
-    margin-left: 220px;
-    width: 800px;
+    place-content: center;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

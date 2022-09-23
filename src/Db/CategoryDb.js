@@ -4,7 +4,7 @@ export const CategoryDb = [
     { key: 55890, value: "건강/취미/레저" },
     { key: 170, value: "경제경영" },
     { key: 987, value: "과학" },
-    { key: 117, value: "경제경영" },
+    { key: 351, value: "컴퓨터" },
     { key: 2551, value: "만화" },
     { key: 798, value: "사회과학" },
     { key: 1322, value: "외국어" },

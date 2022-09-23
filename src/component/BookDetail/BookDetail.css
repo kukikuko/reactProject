@@ -1,12 +1,11 @@
 .detailArticle {
-    width: 1050px;
-    margin-top: 25px;
+    margin: 50px auto;
     display: flex;
     justify-content: space-between;
+    width: 950px;
 }
 
 .detailImg {
-    margin-left: 120px;
     width: 400px;
     height: 552px;
     display: block;
@@ -14,4 +13,78 @@
 
 .detailMain {
     width: 450px;
+}
+
+.detailDlv {
+    color: rgb(153, 153, 153); 
+    font-weight: bold;
+}
+
+.detailPrice {
+    margin-bottom: 20px; 
+    border-bottom :1px solid lightgray; 
+    padding-bottom :20px
+}
+
+.dtSale {
+    color: rgb(250, 98, 47)
+}
+
+.dtWon {
+    font-size : 20px;
+    font-weight : bold
+}
+
+.dtStPrice {
+    text-decoration: line-through;
+    color : gray;
+    font-size: 18px
+}
+
+.dtDl {
+    display: flex;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid lightgray;
+    padding: 10px;
+}
+
+.dl {
+    width: 150px;
+}
+
+.dtAuthor {
+    display: flex;
+}
+
+.dtAuthor .dtStPrice {
+    width: 300px;
+}
+
+.ddSp {
+    font-size: 12px;
+    color: gray;
+    font-weight: bold;
+}
+
+.dtBtn {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.dtBtn > button {
+    border-radius: 5px;
+    padding: 10px 5s0px;
+}
+.dtBtn_1 {
+    background: white;
+    color: purple;
+    border : 1px solid purple;
+}
+
+.dtBtn_2 {
+    background: purple;
+    border: none;
+    color: white;
 }

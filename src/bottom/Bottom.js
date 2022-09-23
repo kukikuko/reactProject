@@ -2,7 +2,7 @@ import './Bottom.css';
 
 function Bottom () {
     return(
-    <>
+    <div style={{width : "1050px", margin : "0 auto"}}>
         <div className='bottomMain'>
             <div className='bm1'>
                 <div><span className='bm1Span'>고객행복센터</span> 365일 오전 7시 - 오후 7시</div>
@@ -74,7 +74,7 @@ function Bottom () {
             마켓플레이스(오픈마켓) 상품의 경우 컬리는 통신판매중개자로서 통신판매의 당사자가 아닙니다. 컬리는 해당 상품의 주문, 품질, 교환/환불 등 의무와 책임을 부담하지 않습니다.
         </div>
         <div style={{marginBottom : "300px"}}></div>
-    </>
+    </div>
     );
 };
 
