@@ -1,0 +1,38 @@
+.Category {
+    margin: 50px 0;
+}
+
+.list {
+    margin-left: 220px;
+    width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    margin-bottom: 50px;
+}
+
+.list li {
+    padding: 10px;
+}
+
+.list > li > button {
+    padding: 10px 20px;
+    border-radius: 15px;
+    background: rgb(247, 247, 247);
+    border: none ;
+}
+
+.list > li > button:hover {
+    color: purple;
+    text-decoration-color: purple;
+}
+
+.list> li > .clicked_listBtn { /*클릭 시 적용되는 style 속성*/
+    color: white;
+    background: purple;
+}
+
+.list> li > .clicked_listBtn:hover {
+    color: white;
+}

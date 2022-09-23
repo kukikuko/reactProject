@@ -8,7 +8,7 @@ import { Pagination, Navigation } from "swiper";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-export default function Slider({params}) {
+export default function Slider({params, params2}) {
 
   let navigate = useNavigate();
   const [getData, setGetData] = useState([]);
@@ -19,7 +19,7 @@ export default function Slider({params}) {
       try {
         //응답 성공
         const response = await axios.get(
-          `/ttb/api/ItemList.aspx?ttbkey=ttbgurwn8051154001&QueryType=Bestseller&MaxResults=100&start=1&SearchTarget=${params}&Cover=Big&output=js&Version=20131101`
+          `/ttb/api/ItemList.aspx?ttbkey=ttbgurwn8051154001&QueryType=Bestseller&CategoryId=${params2}&MaxResults=100&start=1&SearchTarget=${params}&Cover=Big&output=js&Version=20131101`
         );
         console.log("Response DATA : ", response.data.item.slice(0, 12));
         setGetData(response.data.item.slice(0, 12)); //12개만 보이도록!
@@ -29,13 +29,12 @@ export default function Slider({params}) {
       }
     }
     get();
-  }, [params]);
+  }, [params, params2]);
 
 
   return (
     <>
       <Swiper
-        // style={ { height : "500px"}}
         slidesPerView={4}
         spaceBetween={30}
         slidesPerGroup={4}
