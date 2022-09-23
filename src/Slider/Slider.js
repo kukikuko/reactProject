@@ -64,13 +64,19 @@ export default function Slider({params, params2}) {
             <div>
               {priceSales !== priceStandard 
               ? <div>
-                  <span style={{color: "rgb(250, 98, 47)"}}>{sale}%</span> {item.priceSales}원
+                  <span style={{color: "rgb(250, 98, 47)"}}>{sale}%</span>
+                  {item.priceSales}
+                  <span style={{fontSize: "15px"}}>원</span>
                   <span 
                     style={{display: "block", textDecoration:"line-through", color : "gray"}}>
-                    {item.priceStandard}원
+                    {item.priceStandard}
+                    <span style={{fontSize: "15px"}}>원</span>
                   </span>
                 </div>
-              : <span style={{fontSize: "16px", fontWeight: "bold"}}>{item.priceStandard}원</span>
+              : <span style={{fontSize: "16px", fontWeight: "bold"}}>
+                  {item.priceStandard}
+                  <span style={{fontSize: "15px"}}>원</span>
+                </span>
               }
             </div>
           </SwiperSlide>
