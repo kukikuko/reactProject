@@ -5,7 +5,7 @@ import Banner from './component/Banner/Banner.js';
 import BookCard from './component/BookCard/BookCard.js';
 import BookDetial from './component/BookDetail/BookDetail.js';
 import Nav from './component/Nav/Nav.js';
-import Main from './Main.js';
+import Main from './Pages/Main/Main.js';
 import Bottom from './bottom/Bottom';
 
 function App() {

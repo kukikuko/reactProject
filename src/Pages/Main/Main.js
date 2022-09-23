@@ -1,8 +1,8 @@
-import Slider from "./Slider/Slider";
-import Title  from "./Title/Title";
-import MainCarousel from './component/Carousel/Carousel';
-import Category from "./component/Category/Category";
-import { CategoryDb } from "../src/Db/CategoryDb.js"
+import Slider from "../../Slider/Slider";
+import Title  from "../../Title/Title";
+import MainCarousel from '../../component/Carousel/Carousel';
+import Category from "../../component/Category/Category";
+import { CategoryDb } from "../../Db/CategoryDb.js"
 function Main() {
     return (
         <>  
