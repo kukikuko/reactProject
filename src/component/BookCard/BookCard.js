@@ -1,17 +1,20 @@
-import { Col, Card } from "react-bootstrap";
+import './BookCard.css';
+import { Col, Card, Row, Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import axios from "axios";
 
-//params 넣어서 다시 세팅하기
 
-
-function BookCard({ books, book, i }) {
-
+function BookList({key, books, book, i}) {
   let navigate = useNavigate();
+
   let priceStandard = book.priceStandard;
   let priceSales = book.priceSales;
   let sale = Math.floor(((priceStandard-priceSales)/priceStandard)*100);
-  
+
   return (
+    <div>
     <Col>
       <Card
         onClick={() => {
@@ -31,7 +34,46 @@ function BookCard({ books, book, i }) {
         </Card.Body>
       </Card>
     </Col>
+    </div>
+  );
+};
+
+
+function BookCard() {
+  let {list} = useParams();
+  let [books, setBooks] = useState([]);
+
+  useEffect(() => {
+    async function get() {
+      try {
+        //응답 성공
+        const response = await axios.get(
+          `/ttb/api/ItemList.aspx?ttbkey=ttbgurwn8051154001&QueryType=Bestseller&CategoryId=""&MaxResults=100&start=1&SearchTarget=${list}&Cover=Big&output=js&Version=20131101`
+        );
+        console.log("Response DATA : ", response.data.item);
+        setBooks(response.data.item);
+        console.log(books);
+      } catch (error) {
+        //응답 실패
+        console.log("Carousel Error : ", error);
+      }
+    }
+    get();
+  }, [list]);
+  
+  return(
+  <div>
+  <div className='sectionTitle'><span>이 상품 어때요?</span></div>
+  <Container style={{width: "1100px"}}>
+    <Row sm={1} md={4}>
+      {books.map((data, i) => {
+        return <BookList key={data.isbn} books={books} book={data} i={i} />;
+      })}
+    </Row>
+  </Container>
+</div>
   );
 }
 
 export default BookCard;
+

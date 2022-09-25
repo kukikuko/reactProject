@@ -1,0 +1,24 @@
+.header {
+    width: 1050px;
+    margin: 0 auto;
+    margin-top: 10px;
+    position: relative;
+}
+
+.headerDiv1 {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.headerBtn {
+    border: none;
+    background-color: white;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+.purple {
+    color: purple;
+}

@@ -6,7 +6,8 @@ import BookCard from './component/BookCard/BookCard.js';
 import BookDetial from './component/BookDetail/BookDetail.js';
 import Nav from './component/Nav/Nav.js';
 import Main from './Pages/Main/Main.js';
-import Bottom from './bottom/Bottom';
+import Bottom from './Pages/bottom/Bottom.js';
+import Header from './Pages/Header/Header';
 
 function App() {
   let [inputValue, setInputValue] = useState("");
@@ -14,21 +15,22 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
       <Banner inputValue={inputValue} setInputValue={setInputValue} />
       <div className='aa'>
         <ul>
-        <li onClick={()=> { navigate("/bestbook") }}>베스트셀러</li>
-        <li onClick={()=> { navigate("/book") }}>국내도서</li>
-        <li onClick={()=> { navigate("/books") }}>외국도서</li>
-        <li onClick={()=> { navigate("/music") }}>음반</li>
+        <li onClick={()=> { navigate("/list/Book") }}>국내도서</li>
+        <li onClick={()=> { navigate("/list/Foreign") }}>외국도서</li>
+        <li onClick={()=> { navigate("/list/Music") }}>음반</li>
+        <li onClick={()=> { navigate("/list/DVD") }}>DVD</li>
         </ul>
       </div>
       {/* <Nav /> */}
 
       <Routes>
-        <Route path='/' element={<Main />}>
-        </Route>
+        <Route path='/' element={<Main />} />
         <Route path="/goods/:itemId" element={<BookDetial/>} />
+        <Route path="/list/:list" element={<BookCard />} />
       </Routes>
       <Bottom />
     </div>

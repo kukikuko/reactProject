@@ -3,7 +3,7 @@ import Carousel from "react-bootstrap/Carousel";
 function MainCarousel() {
   return (
     <div style={{marginBottom : "100px"}}>
-      <Carousel>
+      <Carousel style={{margin: "0 auto"}}>
         <Carousel.Item>
           <img className="d-block w-100" src={`${process.env.PUBLIC_URL}/Banner1.png`} alt="First slide" style={{ height: "370px" }} />
         </Carousel.Item>

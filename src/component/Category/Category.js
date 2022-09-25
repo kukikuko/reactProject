@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from "react";
-import Slider from "../../Slider/Slider";
+import Slider from "../Slider/Slider";
 import './Category.css';
 
 function Category({CategoryDb}) {
