@@ -36,3 +36,16 @@
 .list> li > .clicked_listBtn:hover {
     color: white;
 }
+
+.CategoryBtn_1 {
+    border: 1px solid rgb(196, 194, 194);
+    font-size: 16px;
+    width: 300px;
+    background-color: white;
+    height: 60px;
+}
+
+.CategoryBtn {
+    width: 1050px; 
+    text-align : center;
+}

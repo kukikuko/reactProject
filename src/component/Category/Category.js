@@ -1,12 +1,16 @@
 
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Slider from "../Slider/Slider";
 import './Category.css';
+
 
 function Category({CategoryDb}) {
     const [text, setText] = useState(CategoryDb[0].value);
     const [currentClick, setCurrentClick] = useState(CategoryDb[0].key);
     const [prevClick, setPrevClick] = useState(null);
+    
+    let navigate = useNavigate();
 
     const GetClick = (e) => {
         setCurrentClick(e.target.getAttribute("value"));
@@ -49,6 +53,13 @@ function Category({CategoryDb}) {
             <>
                 <Slider params={''} params2={currentClick}/>
             </>
+            <div className="CategoryBtn">
+                <button 
+                    onClick={() => {
+                        navigate(`/list/Book/${currentClick}`)
+                    }}
+                    className="CategoryBtn_1">{text} 전체보기</button>
+            </div>
         </div>
     )
 }

@@ -40,7 +40,7 @@ function BookList({key, books, book, i}) {
 
 
 function BookCard() {
-  let {list} = useParams();
+  let {list, category} = useParams();
   let [books, setBooks] = useState([]);
 
   useEffect(() => {
@@ -48,7 +48,7 @@ function BookCard() {
       try {
         //응답 성공
         const response = await axios.get(
-          `/ttb/api/ItemList.aspx?ttbkey=ttbgurwn8051154001&QueryType=Bestseller&CategoryId=""&MaxResults=100&start=1&SearchTarget=${list}&Cover=Big&output=js&Version=20131101`
+          `/ttb/api/ItemList.aspx?ttbkey=ttbgurwn8051154001&QueryType=Bestseller&CategoryId=${category}&MaxResults=100&start=1&SearchTarget=${list}&Cover=Big&output=js&Version=20131101`
         );
         console.log("Response DATA : ", response.data.item);
         setBooks(response.data.item);
