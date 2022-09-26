@@ -1,13 +1,16 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import './Banner.css';
-import { FaSearch } from "react-icons/fa";
 
-function Banner({inputValue, setInputValue}) {
+function Banner() {
     let navigate = useNavigate();
+    let [inputValue, setInputValue] = useState("");
+    console.log(inputValue); 
 
     return(
         <div className="banner">
-            <p style={{textAlign: "cneter"}}>
+            <p style={{textAlign: "center"}}>
                 <img src={`${process.env.PUBLIC_URL}/logo.png`} alt="kurlyLogo" style={{margin : "20px auto", display: "block"}} 
                     onClick={() => {navigate("/");}}/>
             </p>
@@ -18,7 +21,13 @@ function Banner({inputValue, setInputValue}) {
                     onChange={(event) => {
                         setInputValue(event.target.value);
                     }} />
-                {/* <FaSearch className="searchIcon"/> */}
+                <button 
+                    type="submit"
+                    onClick={(event) => {
+                        event.preventDefault();
+                        navigate(`search/${inputValue}`)
+                        setInputValue("");
+                    }}>버튼</button>
             </form>
             </div>
         </div>

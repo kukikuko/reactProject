@@ -5,6 +5,7 @@ import BookDetial from './component/BookDetail/BookDetail.js';
 import Main from './Pages/Main/Main.js';
 import Bottom from './Pages/Bottom/Bottom.js';
 import Header from './Pages/Header/Header';
+import SearchCard from './component/SearchCard/SearchCard.js';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
         <Route path='/' element={<Main />} />
         <Route path="/goods/:itemId" element={<BookDetial/>} />
         <Route path="/list/:list/:category" element={<BookCard />} />
+        <Route path="/search/:search" element={<SearchCard />} />
       </Routes>
       <Bottom />
     </div>
