@@ -14,7 +14,6 @@ function BookDetial() {
           const response = await axios.get(
             `/ttb/api/ItemLookUp.aspx?ttbkey=ttbgurwn8051154001&itemIdType=ItemId&ItemId=${itemId}&output=js&Version=20131101&Cover=Big`
           );
-          console.log("Response DATA : ", response.data.item[0]);
           setBookInfo(response.data.item[0]);
         } catch (error) {
           //응답 실패

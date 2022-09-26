@@ -21,7 +21,6 @@ export default function Slider({params, params2}) {
         const response = await axios.get(
           `/ttb/api/ItemList.aspx?ttbkey=ttbgurwn8051154001&QueryType=Bestseller&CategoryId=${params2}&MaxResults=100&start=1&SearchTarget=${params}&Cover=Big&output=js&Version=20131101`
         );
-        console.log("Response DATA : ", response.data.item.slice(0, 12));
         setGetData(response.data.item.slice(0, 12)); //12개만 보이도록!
       } catch (error) {
         //응답 실패

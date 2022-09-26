@@ -4,26 +4,11 @@
   box-sizing: border-box;
 }
 
-.aa {
-  text-align: center;
-  border-bottom: 1px solid lightgray;
-}
-.aa ul {
-  display: inline-block;
-}
-.aa ul li {
-  width: 200px;
-  cursor: pointer;
+ul, li {
   list-style: none;
-  float: left;
-  text-align: center;
-  margin-top: 20px;
-  font-weight: bold;
-  font-size: 20px;
-}
-li:hover {
-  color: purple;
-  text-decoration-line: underline;
-  text-decoration-color: purple;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}

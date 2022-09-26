@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Slider from "../Slider/Slider";
 import './Category.css';
 
@@ -54,13 +54,17 @@ function Category({CategoryDb}) {
                 <Slider params={''} params2={currentClick}/>
             </>
             <div className="CategoryBtn">
-                <button 
-                    onClick={() => {
-                        navigate(`/list/Book/${currentClick}`)
-                    }}
-                    className="CategoryBtn_1">{text} 전체보기</button>
+                <Link 
+                    to={`/list/Book/${currentClick}`} 
+                    state={{value : text, category : currentClick}} >
+                        <button className="CategoryBtn_1">{text} 전체보기</button>
+                </Link>
             </div>
         </div>
     )
 }
 export default Category;
+
+// onClick={() => {
+//     navigate(`/list/Book/${currentClick}`)
+// }}

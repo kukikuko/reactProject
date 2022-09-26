@@ -1,4 +1,8 @@
+import Banner from '../../component/Banner/Banner.js';
+import Nav from '../../component/Nav/Nav.js'
 import './Header.css';
+import { BookDb } from "../../Db/CategoryDb.js"
+
 
 function Header () {
     return(
@@ -8,6 +12,8 @@ function Header () {
                 <button className='headerBtn '>로그인</button>
                 <button className='headerBtn '>고객센터</button>
             </div>
+            <Banner />
+            <Nav BookDb={BookDb}/>
         </div>
     );
 }
