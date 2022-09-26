@@ -1,6 +1,6 @@
 
 .searchBox form input {
-    width: 50%;
+    width: 100%;
     border: 1px solid rgba(110, 12, 110, 0.795);
     border-radius: 5px;
     height: 50px;
@@ -9,9 +9,25 @@
 
 .searchBox form {
     position: relative;
+    width: 500px;
     text-align: center;
+    margin: 0 auto;
 }
 
 .searchBox form input:focus {
     outline: none;
+}
+
+.icon {
+    color: purple;
+}
+
+.bannerBtn {
+    position : absolute;
+    background-color: white;
+    border: none;
+    width: 17px;
+    top: 10px;
+    right: 12px;
+    margin: 0;
 }

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { FaSearch } from 'react-icons/fa';
 import './Banner.css';
 
 function Banner() {
@@ -15,20 +15,24 @@ function Banner() {
                     onClick={() => {navigate("/");}}/>
             </p>
             <div className="searchBox">
-            <form>
-                <input 
-                    type="text" name="value" value={inputValue} placeholder="검색어를 입력해주세요" 
-                    onChange={(event) => {
-                        setInputValue(event.target.value);
-                    }} />
-                <button 
-                    type="submit"
-                    onClick={(event) => {
-                        event.preventDefault();
-                        navigate(`search/${inputValue}`)
-                        setInputValue("");
-                    }}>버튼</button>
-            </form>
+                <form>
+                    <input 
+                        type="text" name="value" value={inputValue} placeholder="검색어를 입력해주세요" 
+                        onChange={(event) => {
+                            setInputValue(event.target.value);
+                        }} />
+                    <button 
+                        className="bannerBtn"
+                        type="submit"
+                        onClick={(event) => {
+                            event.preventDefault();
+                            navigate(`search/${inputValue}`)
+                            setInputValue("");
+                        }}>
+                        <FaSearch className="icon" />
+                    </button>
+                    
+                </form>
             </div>
         </div>
     );
