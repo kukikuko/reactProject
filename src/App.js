@@ -10,7 +10,6 @@ import Signup from './Pages/Signup/Signup';
 import Login from './Pages/Login/Login';
 
 function App() {
-
   return (
     <div className="App">
       <Header />
