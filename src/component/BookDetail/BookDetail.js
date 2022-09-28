@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import './BookDetail.css'
 import axios from "axios";
@@ -27,6 +27,8 @@ function BookDetial() {
     let priceSales = bookInfo.priceSales;
     let description = bookInfo.description;
     let sale = Math.floor(((priceStandard-priceSales)/priceStandard)*100);
+
+    console.log(bookInfo);
 
     return (
       <div style={{height : "1000px"}}>
@@ -86,7 +88,11 @@ function BookDetial() {
                 onClick={()=>{
                   window.open(bookInfo.link)}}
                 className="dtBtn_1">알라딘으로 이동</button>
+              <Link 
+                to={"/cart"}
+                state={{ISBN : bookInfo.isbn13}}>
               <button className="dtBtn_2">장바구니 담기</button>
+              </Link>
             </div>
           </div>
         </article>

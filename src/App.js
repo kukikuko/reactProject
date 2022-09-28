@@ -8,6 +8,7 @@ import Header from './Pages/Header/Header';
 import SearchCard from './component/SearchCard/SearchCard.js';
 import Signup from './Pages/Signup/Signup';
 import Login from './Pages/Login/Login';
+import Cart from './Pages/Cart/Cart';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/search/:search" element={<SearchCard />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/cart" element={<Cart />}/>
       </Routes>
       <Bottom />
     </div>

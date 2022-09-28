@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Slider from "../Slider/Slider";
 import './Category.css';
 
@@ -10,8 +10,6 @@ function Category({CategoryDb}) {
     const [currentClick, setCurrentClick] = useState(CategoryDb[0].key);
     const [prevClick, setPrevClick] = useState(null);
     
-    let navigate = useNavigate();
-
     const GetClick = (e) => {
         setCurrentClick(e.target.getAttribute("value"));
         setText(e.target.getAttribute("name"));
