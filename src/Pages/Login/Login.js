@@ -3,21 +3,29 @@ import "./Login.css";
 import { Formik, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import Swal from "sweetalert2";
+import { useLocation } from "react-router";
 
 function Login() {
+  const location = useLocation();
+  let userDb = location.state
   const navigate = useNavigate();
+
+  console.log(userDb);
+
+
+
+
   const validationSchema = Yup.object().shape({
     email: Yup.string().email("올바른 이메일 형식이 아닙니다!").required("이메일을 입력하세요!"),
     password: Yup.string().required("패스워드를 입력하세요!"),
   });
-  const submit = async (values) => {
-    const { email, password } = values;
-    try {
+  const submit = ({email, password}) => {
+    if(userDb.email === email && userDb.password === password) {
       Swal.fire({ title: "로그인 성공", icon: "success" }).then(function () {
         navigate("/");
       });
-    } catch (e) {
-      Swal.fire({ title: "로그인 실패", text: e.response.data.message, icon: "error" });
+    } else {
+      Swal.fire({ title: "로그인 실패", text: "아이디 또는 비밀번호가 틀렸습니다", icon: "error" });
     }
   };
 

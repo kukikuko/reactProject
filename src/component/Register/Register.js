@@ -2,17 +2,16 @@ import "./Register.css";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
-import axios from "axios";
-import { Formik } from "formik";
+import { Formik, ErrorMessage } from "formik";
 
 function Register() {
   let navigate = useNavigate();
 
   const validationSchema = yup.object().shape({
     email: yup
-        .string()
-        .required("이메일을 입력해주세요")
-        .email("이메일 형식이 아닙니다."),
+      .string()
+      .required("이메일을 입력해주세요")
+      .email("이메일 형식이 아닙니다."),
     username: yup
       .string()
       .required("닉네임을 입력해주세요")
@@ -31,17 +30,12 @@ function Register() {
   const submit = async (values) => {
     const { email, password, username } = values;
     try {
-      await axios.post("/api/auth/signup", {
-        email,
-        password,
-        username,
-      });
       Swal.fire({ title: "회원가입 성공", icon: "success" }).then(function () {
-        navigate("/login");
+        navigate("/login", {state : values});
       });
       console.log(values);
     } catch (e) {
-      console.log("error");
+      console.log(e);
     }
   };
 
@@ -68,7 +62,7 @@ function Register() {
               </div>
               <div className="regInput">
                 <input name="email" placeholder="이메일을 입력해주세요" value={values.email} onChange={handleChange} className="inputText" />
-                {errors.email &&<p className="errorMsg">{errors.email}</p>}
+                {errors.email && <p className="errorMsg">{errors.email}</p>}
               </div>
             </div>
             <div className="registerSection">
@@ -77,7 +71,7 @@ function Register() {
               </div>
               <div className="regInput">
                 <input name="username" placeholder="닉네임을 입력해주세요" value={values.username} onChange={handleChange} className="inputText" />
-                {errors.username &&<p className="errorMsg">{errors.username}</p>}
+                {errors.username && <p className="errorMsg">{errors.username}</p>}
               </div>
             </div>
             <div className="registerSection">
@@ -96,7 +90,7 @@ function Register() {
               <div className="regInput">
                 <input
                   type="password" name="passwordConfirm" placeholder="비밀번호를 한번더 입력해주세요" value={values.passwordConfirm} onChange={handleChange} className="inputText"/>
-                {errors.passwordConfirm && touched.passwordConfirm ? <p className="errorMsg">{errors.passwordConfirm}</p> : null}
+                {errors.passwordConfirm && <p className="errorMsg">{errors.passwordConfirm}</p>}
               </div>
             </div>
             <div className="registerDiv_3">

@@ -6,7 +6,6 @@ import './Banner.css';
 function Banner() {
     let navigate = useNavigate();
     let [inputValue, setInputValue] = useState("");
-    console.log(inputValue); 
 
     return(
         <div className="banner">
