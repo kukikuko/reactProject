@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaSearch } from 'react-icons/fa';
+import { BsCart2 } from "react-icons/bs";
 import './Banner.css';
 
 function Banner() {
@@ -30,8 +31,12 @@ function Banner() {
                         }}>
                         <FaSearch className="icon" />
                     </button>
-                    
                 </form>
+            </div>
+            <div className="cartDiv">
+                <button className="cartBtn" onClick={()=>{navigate("/cart");}}>
+                    <BsCart2 className="cartIcon" />
+                </button>
             </div>
         </div>
     );

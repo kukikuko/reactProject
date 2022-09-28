@@ -1,11 +1,53 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import { useState, useEffect } from "react";
 import './BookDetail.css'
 import axios from "axios";
 
 function BookDetial() {
+    let navigate = useNavigate();
     let [bookInfo, setBookInfo] = useState([]);
     let {itemId} = useParams();
+
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'center',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+  })
+
+    const onClickCart = (bookCart) => () => {
+      const Cart = (JSON.parse(localStorage.getItem("Cart")) || []);
+      let isExists = false;
+      Cart.forEach((book) => {
+        if(bookCart.isbn === book.isbn) isExists = true;
+      });
+      if (isExists) {
+        Swal.fire({
+          title: "이미 장바구니에 담으셨습니다!",
+          text : "장바구니로 이동하시겠습니까?",
+          icon: "warning",
+
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor : "#d33",
+          cancelButtonText : "취소",
+          confirmButtonText : "이동"
+        }).then(result => {
+          if(result.isConfirmed) {
+            navigate("/cart");
+          }
+        })
+        return;
+      }
+      Toast.fire({
+        icon: 'success',
+        title: '장바구니에 상품을 담았습니다.'
+      })
+      Cart.push(bookCart);
+      localStorage.setItem("Cart", JSON.stringify(Cart));
+    };
 
     useEffect(() => {
       async function get() {
@@ -23,12 +65,11 @@ function BookDetial() {
       get();
     }, [itemId]);
 
+
     let priceStandard = bookInfo.priceStandard;
     let priceSales = bookInfo.priceSales;
     let description = bookInfo.description;
     let sale = Math.floor(((priceStandard-priceSales)/priceStandard)*100);
-
-    console.log(bookInfo);
 
     return (
       <div style={{height : "1000px"}}>
@@ -88,11 +129,7 @@ function BookDetial() {
                 onClick={()=>{
                   window.open(bookInfo.link)}}
                 className="dtBtn_1">알라딘으로 이동</button>
-              <Link 
-                to={"/cart"}
-                state={{ISBN : bookInfo.isbn13}}>
-              <button className="dtBtn_2">장바구니 담기</button>
-              </Link>
+              <button className="dtBtn_2" onClick={onClickCart(bookInfo)}>장바구니 담기</button>
             </div>
           </div>
         </article>

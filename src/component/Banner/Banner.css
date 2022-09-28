@@ -31,3 +31,28 @@
     right: 12px;
     margin: 0;
 }
+
+.cartBtn {
+    width: 36px;
+    height: 36px;
+    border: none;
+    background-color: white;
+}
+
+.cartDiv {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 100px;
+    top: 65px;
+}
+
+
+.cartBtn:hover {
+    color: purple;
+}
+
+.cartIcon {
+    width: 100%;
+    height: 100%;
+}
