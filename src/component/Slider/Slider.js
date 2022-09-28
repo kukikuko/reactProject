@@ -19,7 +19,7 @@ export default function Slider({params, params2}) {
       try {
         //응답 성공
         const response = await axios.get(
-          process.env.REACT_APP_DB_HOST + `/ttb/api/ItemList.aspx?ttbkey=ttbgurwn8051154001&QueryType=Bestseller&CategoryId=${params2}&MaxResults=100&start=1&SearchTarget=${params}&Cover=Big&output=js&Version=20131101`
+          `/ttb/api/ItemList.aspx?ttbkey=ttbgurwn8051154001&QueryType=Bestseller&CategoryId=${params2}&MaxResults=100&start=1&SearchTarget=${params}&Cover=Big&output=js&Version=20131101`
         );
         setGetData(response.data.item.slice(0, 12)); //12개만 보이도록!
       } catch (error) {

@@ -1,6 +1,10 @@
 .login {
     width: 1050px;
-    margin: 90px 0 60px 0;
+    margin-top: 90px;
+    margin-bottom: 60px;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 .loginDiv_1 {
@@ -16,19 +20,43 @@
 
 .loginDiv_2 {
     margin-top: 30px;
+    margin-bottom: 10px;
 }
 
 .LogInput {
     width: 340px;
-    height: 60px;
+    height: 80px;
 }
 
 .LoginText {
     width: 100%;
-    height: 46px;
+    height: 50px;
     border-radius: 4px;
     border: 1px solid #ddd;
     padding: 0 11px 1px 15px;
     font-weight: 400;
-    outline: none;
+}
+
+
+
+.loginBtn_1 {
+    width: 340px;
+    height: 50px;
+    background-color: rgb(95, 0, 128);
+    color: white;
+    text-align: center;
+    border: 0px none;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.loginBtn_2 {
+    width: 340px;
+    height: 50px;
+    background-color: white;
+    color: rgb(95, 0, 128);
+    text-align: center;
+    border: 1px solid rgb(95, 0, 128);
+    border-radius: 3px;
+    margin-bottom: 10px;
 }

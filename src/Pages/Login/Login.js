@@ -19,7 +19,10 @@ function Login() {
     email: Yup.string().email("올바른 이메일 형식이 아닙니다!").required("이메일을 입력하세요!"),
     password: Yup.string().required("패스워드를 입력하세요!"),
   });
-  const submit = ({email, password}) => {
+  const submit = ({email, password}) => { 
+    if(userDb == null) {
+      Swal.fire({ title: "로그인 실패", text: "회원가입을 해주세요", icon: "error" });
+    }
     if(userDb.email === email && userDb.password === password) {
       Swal.fire({ title: "로그인 성공", icon: "success" }).then(function () {
         navigate("/");
