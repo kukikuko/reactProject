@@ -41,21 +41,22 @@ function Login() {
       {({ values, handleSubmit, handleChange }) => (
         <div className="login">
           <div className="loginDiv_1">로그인</div>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="loginForm">
             <div className="loginDiv_2">
               <div className="LogInput">
                 <input type="text" value={values.email} name="email" placeholder="이메일을 입력해주세요" onChange={handleChange} className="LoginText" />
-                <ErrorMessage name="email" />
+                <p><ErrorMessage name="email" /></p>
               </div>
               <div className="LogInput">
                 <input
                   type="password" value={values.password} name="password" placeholder="비밀번호를 입력해주세요" onChange={handleChange} className="LoginText"/>
-                <ErrorMessage name="password" />
+                <p><ErrorMessage name="password" /></p>
               </div>
             </div>
-            <div className="registerDiv_3">
-              <input value={"로그인"} type="submit" className="regBtn" />
-              <input value={"회원가입"} type="button" className="regBtn" />
+            <div className="loginDiv_3">
+              <input value={"로그인"} type="submit" className="loginBtn_1" />
+              <input value={"회원가입"} type="button" className="loginBtn_2" 
+                      onClick={()=>{navigate("/signup")}} />
             </div>
           </form>
         </div>
