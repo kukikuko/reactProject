@@ -2,9 +2,40 @@ import { useState } from "react";
 import Title from "../../component/Title/Title";
 import './Cart.css';
 import { FiMapPin } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
+
+
+function Cart() {
+    let navigate = useNavigate();
+    let [cartItem, setCartItem] = useState(JSON.parse(localStorage.getItem("Cart")));
+        
+    console.log(cartItem);
+
+    return(
+        <div>
+            {cartItem == null 
+            ? 
+            <div className="cartNull">
+                <div className="nullDiv">장바구니에 담긴 상품이 없습니다.</div>
+                <button 
+                    className="nullBtn"
+                    onClick={()=>{navigate('/')}}
+                >메인으로</button>
+            </div>
+            : 
+            <div>
+                <Title title={"장바구니"} />
+                <CartList cartItem={cartItem}/>                
+            </div>
+            }
+        </div>
+    );
+
+}
 
 function CartList({cartItem}) {
 
+    let navigate = useNavigate();
     let totalPrice = 0;
 
     for(let item of cartItem) {
@@ -17,8 +48,10 @@ function CartList({cartItem}) {
                 {cartItem.map((data) => {
                     return (
                         <div className="listDiv">
-                            <img className="listImg" src={data.cover} />
-                            <div className="listTitle">
+                            <img 
+                                className="listImg" src={data.cover} 
+                                onClick={() => {navigate(`/goods/${data.itemId}`)}} />
+                            <div className="listTitle" onClick={() => {navigate(`/goods/${data.itemId}`)}}>
                                 {data.title}
                             </div>
                             <div className="listPrice">
@@ -76,20 +109,7 @@ function CartList({cartItem}) {
 
 
 
-function Cart() {
 
-    let [cartItem, setCartItem] = useState(JSON.parse(localStorage.getItem("Cart")));
-        
-    console.log(cartItem);
-
-    return(
-        <div>
-            <Title title={"장바구니"} />
-            <CartList cartItem={cartItem}/>
-        </div>
-    );
-
-}
 
 export default Cart;
 

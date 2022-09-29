@@ -30,7 +30,7 @@
     flex-direction: column;
     width: 500px;
     margin-right: 20px;
-
+    cursor: pointer;
 }
 
 .listPrice {
@@ -143,4 +143,29 @@
     font-size: 14px;
     line-height: 16px;
     padding: 7px;
+}
+
+.cartNull {
+    width: 1050px;
+    margin-top: 90px;
+    margin-bottom: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.nullDiv {
+    font-weight: 800;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.nullBtn {
+    width: 340px;
+    height: 50px;
+    background-color: rgb(95, 0, 128);
+    color: white;
+    border: 0px none;
+    border-radius: 3px;
+    margin-bottom: 10px;
 }
