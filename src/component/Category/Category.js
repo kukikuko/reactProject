@@ -11,6 +11,7 @@ function Category({CategoryDb}) {
     const [prevClick, setPrevClick] = useState(null);
     
     const GetClick = (e) => {
+        console.log(e.target);
         setCurrentClick(e.target.getAttribute("value"));
         setText(e.target.getAttribute("name"));
     }

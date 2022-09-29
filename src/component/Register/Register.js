@@ -2,7 +2,7 @@ import "./Register.css";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
-import { Formik, ErrorMessage } from "formik";
+import { Formik } from "formik";
 
 function Register() {
   let navigate = useNavigate();
@@ -28,7 +28,6 @@ function Register() {
   });
 
   const submit = async (values) => {
-    const { email, password, username } = values;
     try {
       Swal.fire({ title: "회원가입 성공", icon: "success" }).then(function () {
         navigate("/login", {state : values});
@@ -50,7 +49,7 @@ function Register() {
       validationSchema={validationSchema}
       onSubmit={submit}
     >
-      {({ values, handleSubmit, handleChange, errors, touched }) => (
+      {({ values, handleSubmit, handleChange, errors }) => (
         <div className="register">
           <div className="registerDiv_1">
             <span className="star">*</span> 필수입력사항
