@@ -9,8 +9,6 @@ function Cart() {
     let navigate = useNavigate();
     let [cartItem, setCartItem] = useState(JSON.parse(localStorage.getItem("Cart")));
         
-    console.log(cartItem);
-
     return(
         <div>
             {cartItem == null 
@@ -37,6 +35,7 @@ function CartList({cartItem}) {
 
     let navigate = useNavigate();
     let totalPrice = 0;
+    
 
     for(let item of cartItem) {
         totalPrice += item.priceSales; 
@@ -51,8 +50,8 @@ function CartList({cartItem}) {
                             <img 
                                 className="listImg" src={data.cover} 
                                 onClick={() => {navigate(`/goods/${data.itemId}`)}} />
-                            <div className="listTitle" onClick={() => {navigate(`/goods/${data.itemId}`)}}>
-                                {data.title}
+                            <div className="listTitle">
+                                <span onClick={() => {navigate(`/goods/${data.itemId}`)}}>{data.title}</span>
                             </div>
                             <div className="listPrice">
                                 {data.priceSales}원

@@ -7,6 +7,7 @@ import axios from "axios";
 function BookDetial() {
     let navigate = useNavigate();
     let [bookInfo, setBookInfo] = useState([]);
+    let [tempbookInfo, settempBookInfo] = useState([]);
     let {itemId} = useParams();
 
     const Toast = Swal.mixin({
@@ -56,6 +57,7 @@ function BookDetial() {
           const response = await axios.get(
             `/ttb/api/ItemLookUp.aspx?ttbkey=ttbgurwn8051154001&itemIdType=ItemId&ItemId=${itemId}&output=js&Version=20131101&Cover=Big`
           );
+          settempBookInfo(response.data)
           setBookInfo(response.data.item[0]);
         } catch (error) {
           //응답 실패
@@ -64,8 +66,6 @@ function BookDetial() {
       }
       get();
     }, [itemId]);
-
-    console.log(bookInfo);
 
     let priceStandard = bookInfo.priceStandard;
     let priceSales = bookInfo.priceSales;
