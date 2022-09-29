@@ -62,7 +62,3 @@ function Category({CategoryDb}) {
     )
 }
 export default Category;
-
-// onClick={() => {
-//     navigate(`/list/Book/${currentClick}`)
-// }}

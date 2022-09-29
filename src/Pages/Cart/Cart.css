@@ -1,0 +1,146 @@
+.cart {
+    width: 1050px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.cartList {
+    width: 742px;
+    border-top: 1px solid black;
+    padding-top: 10px;
+    margin-bottom: 50px;
+}
+
+.listDiv {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 20px 0;
+    border-bottom: 1px solid lightgrey;
+}
+
+.listImg {
+    width: 60px;
+    height: 78px;
+    margin-right: 20px;
+}
+
+.listTitle {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin-right: 20px;
+
+}
+
+.listPrice {
+    display: flex;
+    flex-direction: column;
+    width: 127px;
+    text-align: right;
+    font-weight: bold;
+}
+
+
+.cartPrice {
+    width: 284px;
+    position: relative;
+}
+
+.cartPriceDiv{
+    width: 284px;
+    position: sticky;
+    top: 30px;
+    right: 0px;
+}
+
+.cartPriceDiv_1 {
+    padding: 23px 19px 20px;
+    border: 1px solid #f2f2f2;
+    border-bottom: 0;
+}
+
+.CPD1_h3 {
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 600;
+}
+
+.cartPriceDiv_1 p {
+    padding: 5px 0;
+    font-weight: 500;
+} 
+
+.cartPriceDiv_1 span {
+    color: purple;
+    font-weight: 600;
+}
+
+.cartPriceDiv_1 button {
+    display: block;
+    padding: 0 10px;
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    border-radius: 3px;
+    color: purple;
+    background-color: white;
+    border : 1px solid purple
+}
+
+.cartPriceDiv_2 {
+    padding: 19px 18px 18px 20px;
+    border: 1px solid #f2f2f2;
+    background-color: #fafafa;
+}
+
+.cartPriceDiv_2 > div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.CPD2_span1 {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.CPD2_span2{
+    font-size: 18px;    
+    line-height: 24px;
+    text-align: right;
+}
+
+.CPD2_span {
+    font-weight: bold;
+}
+
+.cartPriceDiv_3 {
+    padding-top: 20px;
+}
+
+.cartPriceDiv_3 > button {
+    background-color: lightgrey;
+    display: block;
+    padding: 0 10px;
+    text-align: center;
+    width: 100%;
+    height: 56px;
+    border-radius: 3px;
+    color: #fff;
+    border: 0 none;
+    font-weight: 500;
+}
+
+.cartPriceDiv_3 > ul {
+    padding: 16px 0;
+}
+
+.cartPriceDiv_3 > ul > li {
+    padding-top: 4px;
+    color: #666;
+    position: relative;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 7px;
+}

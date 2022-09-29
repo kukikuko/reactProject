@@ -50,7 +50,7 @@ function SearchCard() {
       try {
         //응답 성공
         const response = await axios.get(
-            `/ttb/api/ItemSearch.aspx?ttbkey=ttbgurwn8051154001&Query=${search}&QueryType=Title&MaxResults=100&start=1&SearchTarget=All&Cover=Big&output=js&Version=20131101`
+            `/ttb/api/ItemSearch.aspx?ttbkey=ttbgurwn8051154001&Query=${search}&QueryType=Title&MaxResults=100&start=1&SearchTarget=Book&Cover=Big&output=js&Version=20131101`
         );
         setSerches(response.data.item);
       } catch (error) {

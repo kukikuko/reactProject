@@ -65,6 +65,7 @@ function BookDetial() {
       get();
     }, [itemId]);
 
+    console.log(bookInfo);
 
     let priceStandard = bookInfo.priceStandard;
     let priceSales = bookInfo.priceSales;
