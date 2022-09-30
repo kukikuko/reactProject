@@ -21,7 +21,9 @@ function Login() {
   });
   const submit = ({email, password}) => { 
     if(userDb == null) {
-      Swal.fire({ title: "로그인 실패", text: "회원가입을 해주세요", icon: "error" });
+      Swal.fire({ title: "로그인 실패", text: "회원가입을 해주세요", icon: "error" }).then(function(){
+        navigate("/signup");
+      });
     }
     if(userDb.email === email && userDb.password === password) {
       Swal.fire({ title: "로그인 성공", icon: "success" }).then(function () {

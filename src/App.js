@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import BookCard from './component/BookCard/BookCard.js';
 import BookDetial from './component/BookDetail/BookDetail.js';
 import Main from './Pages/Main/Main.js';
-import Bottom from './Pages/Bottom/Bottom.js';
+import Bottom from './Pages/bottom/Bottom.js';
 import Header from './Pages/Header/Header';
 import SearchCard from './component/SearchCard/SearchCard.js';
 import Signup from './Pages/Signup/Signup';
